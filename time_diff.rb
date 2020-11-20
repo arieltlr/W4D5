@@ -42,14 +42,18 @@ list1 = [5, 3, -7]
 list2 = [2, 3, -6, 7, -6, 7]
 p lss(list2)
 
-def lss_refactor(arr)
-    subs = []
-    
-
-    (0...arr.length-1).each do |i|
-        (i+1...arr.length).each do |j|
-            subs << arr[i..j].sum
-        end
-    end
-    subs.max
+def lss_refactor(arr) 
+    premium = 0
+    new_max = 0    
+  (0...arr.length).each do |i|
+     premium += arr[i]
+      premium = premium < arr[i] ? arr[i] : premium
+      new_max = premium if premium > new_max 
+   end
+ new_max
 end
+
+list1 = [5, 3, -7]
+list2 = [2, 3, -6, 7, -6, 7]
+p lss_refactor(list1)
+p lss_refactor(list2)
