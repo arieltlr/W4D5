@@ -43,9 +43,9 @@ list2 = [2, 3, -6, 7, -6, 7]
 p lss(list2)
 
 def lss_refactor(arr) 
-    premium = 0
-    new_max = 0    
-  (0...arr.length).each do |i|
+    premium = 0 # 1
+    new_max = 0    #1
+  (0...arr.length).each do |i| #n
      premium += arr[i]
       premium = premium < arr[i] ? arr[i] : premium
       new_max = premium if premium > new_max 
